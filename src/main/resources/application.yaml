@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 project:
   name: '@project.artifactId@'
   version: '@project.version@'
@@ -25,5 +28,6 @@ spring:
     #Logging
     logging:
       level:
+        org.example.resource: debug
         br.senac.go: debug
         org.springframework.web: info
