@@ -3,6 +3,8 @@ package org.example.resource;
 import lombok.extern.slf4j.Slf4j;
 import org.example.interfaces.IResource;
 import org.example.model.Aluno;
+import org.example.service.AlunoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,9 @@ import java.util.List;
 @RestController //indica o uso de API
 @RequestMapping(value = "api/v1/aluno")
 public class AlunoResource implements IResource<Aluno, Integer> {
+
+    @Autowired //injeção de dependência
+    private AlunoService alunoService;
 
     @PostMapping(
             produces = {MediaType.APPLICATION_JSON_VALUE},
